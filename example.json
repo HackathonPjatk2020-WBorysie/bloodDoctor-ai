@@ -1,0 +1,41 @@
+{
+    "_id": {
+        "$oid": "5e6410cb7e6adc0017a1b540"
+    },
+    "name": "Filip",
+    "Morfology": {
+        "WBC": -1,
+        "RBC": 1,
+        "HGB": 0,
+        "HCT": 0,
+        "MCH": 0,
+        "MCHC": 0,
+        "MCV": 0,
+        "RDW_SD": 0,
+        "PLT": 0,
+        "PDW": 0,
+        "P_LCR": 0,
+        "MPV": 0,
+        "PCT": 0,
+        "LYMP": 0,
+        "NEUT": 0,
+        "MONO": 0,
+        "EOS": 0,
+        "BASO": 0,
+        "IG": 0
+    },
+    "Biochemy": {
+        "CK_M18": -1,
+        "Creatinine_Jaffe_M37": 1,
+        "GFR": 0,
+        "Glucose_L43": 0,
+        "Iron_O95": 0,
+        "Potasium_N45": 0
+    },
+    "Immunology": {
+        "TSH_L69": -1,
+        "fT4_O69": 1,
+        "FT3_O55": 0
+    },
+    "__v": 0
+}
