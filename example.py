@@ -6,6 +6,7 @@ import argparse
 import imutils
 import time
 import cv2
+import json
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--prototxt", required=True,
@@ -17,7 +18,7 @@ ap.add_argument("-c", "--confidence", type=float, default=0.2,
 args = vars(ap.parse_args())
 
 CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat",
-	"bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
+	"shake", "bus", "car", "cat", "chair", "cow", "diningtable", #bottle
 	"dog", "horse", "motorbike", "person", "pottedplant", "sheep",
 	"sofa", "train", "tvmonitor"]
 
@@ -67,9 +68,11 @@ while True:
 			(startX, startY, endX, endY) = box.astype("int")
 
 			# draw the prediction on the frame
-			label = "{} : {:.2f}%".format(CLASSES[idx], confidence * 100)
+			label = "{}".format(CLASSES[idx]) #: {:.2f}%, confidence * 100
 
 			print(label)
+			if label == 'shake':
+				print('tego prosze nie wpierdalac')
 
 			cv2.rectangle(frame, (startX, startY), (endX, endY),
 				COLORS[idx], 2)
