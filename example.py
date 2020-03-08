@@ -28,7 +28,7 @@ print("[INFO] loading model...")
 
 
 net = cv2.dnn.readNetFromCaffe(args["prototxt"], args["model"])
-# net = cv2.dnn.readNetFromTensorflow(args["ptxt"], args["model"])
+# net = cv2.dnn.readNetFromTensorflow(args["model"], args["prototxt"])
 
 # initialize the video stream, allow the cammera sensor to warmup,
 # and initialize the FPS counter
@@ -44,10 +44,10 @@ while True:
 	frame = imutils.resize(frame, width=400)
 	# grab the frame dimensions and convert it to a blob
 	(h, w) = frame.shape[:2]
-	blob = cv2.dnn.blobFromImage(cv2.resize(frame, (300, 300)),
-		0.007843, (300, 300), 127.5)
+	blob = cv2.dnn.blobFromImage(cv2.resize(frame, (300, 300)), 0.007843, (300, 300), 127.5) #frame,1,(299,299)) #cv2.resize(frame, (300, 300)), 0.007843, (300, 300), 127.5 #frame,1,(299,299)
 	# pass the blob through the network and obtain the detections and
 	# predictions
+
 	net.setInput(blob)
 	detections = net.forward()
 
