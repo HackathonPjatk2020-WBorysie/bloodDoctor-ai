@@ -17,9 +17,9 @@ ap.add_argument("-c", "--confidence", type=float, default=0.2,
 	help="minimum probability to filter weak detections")
 args = vars(ap.parse_args())
 
-CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat",
+CLASSES = ["background", "aeroplane", "bicycle", "orange", "boat", # bird
 	"shake", "bus", "car", "cat", "chair", "cow", "diningtable", #bottle
-	"dog", "horse", "motorbike", "person", "pottedplant", "sheep",
+	"dog", "horse", "motorbike", "person", "apple", "sheep", #pottedplant
 	"sofa", "train", "tvmonitor"]
 
 COLORS = np.random.uniform(0, 255, size=(len(CLASSES), 3))
@@ -70,9 +70,16 @@ while True:
 			# draw the prediction on the frame
 			label = "{}".format(CLASSES[idx]) #: {:.2f}%, confidence * 100
 
-			print(label)
+		#	print(label)
 			if label == 'shake':
-				print('tego prosze nie wpierdalac')
+				label = 'tego prosze nie wpierdalac'
+
+			if label == 'orange':
+				label = 'git majonez'
+
+			if label == 'apple':
+				label = 'git majonez'
+
 
 			cv2.rectangle(frame, (startX, startY), (endX, endY),
 				COLORS[idx], 2)
